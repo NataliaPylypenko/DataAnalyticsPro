@@ -1,13 +1,13 @@
 import pandas as pd
 
+# 1. Вивантаження файлу у pandas DataFrame та копіювання DataFrame у нову змінну
+df = pd.read_csv('Lesson_14_task_2.csv')
+df_copy = df.copy()
+
 # print(df_copy.columns.tolist())
 # ['DATETIME_ORIGINAL', 'USAGE_KWH', 'LAGGING_CURRENT_REACTIVE.POWER_KVARH', 'LEADING_CURRENT_REACTIVE_POWER_KVARH',
 # 'CO2(TCO2)', 'LAGGING_CURRENT_POWER_FACTOR', 'LEADING_CURRENT_POWER_FACTOR', 'NSM', 'WEEKSTATUS', 'DAY_OF_WEEK',
 # 'LOAD_TYPE', 'DATETIME_UPDATED']
-
-# 1. Вивантаження файлу у pandas DataFrame та копіювання DataFrame у нову змінну
-df = pd.read_csv('Lesson_14_task_2.csv')
-df_copy = df.copy()
 
 # 2. Конвертація атрибуту Date_Time
 df_copy['Datetime_Updated'] = pd.to_datetime(df_copy['Date_Time'], dayfirst=True)
